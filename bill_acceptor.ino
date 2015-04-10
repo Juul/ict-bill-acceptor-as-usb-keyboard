@@ -62,7 +62,7 @@ void loop() {
     if(dollars_received >= cost_of_service) { // check if enough money has been paid for the service
 //      Serial.print(pulse_count);
 //      Serial.println();  
-      Keyboard.write(KEY_F12); // Send an F3 keypress
+      Keyboard.write(KEY_F6); // Send an F6 keypress
       dollars_received = 0; // reset dollars_received so it's ready for next payment
     }    
 

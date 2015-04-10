@@ -2,7 +2,7 @@ Converting ICT bill acceptor pulse output to USB keyboard keypresses.
 
 # Overview
 
-This guide shows how to connect an ICT bill acceptor with pulse output to an Arduino Leonardo and includes code for the Arduino that will make it act like a USB keyboard, wait until a certain dollar amount has been accepted by the bill acceptor, and send a keypress (e.g. F12). Code is also included to ascertain the pulse width (duration) of your bill acceptor.
+This guide shows how to connect an ICT bill acceptor with pulse output to an Arduino Leonardo and includes code for the Arduino that will make it act like a USB keyboard, wait until a certain dollar amount has been accepted by the bill acceptor, and send a keypress (e.g. F6). Code is also included to ascertain the pulse width (duration) of your bill acceptor.
 
 This guide assumes you have the following:
 
@@ -157,7 +157,19 @@ Change the number 60 in the line "max_pulse_width = 60;" to a value about 10 ms 
 
 Change the number 5 in the line "cost_of_service = 5;" to the number of dollars you want the bill acceptor to require before it sends a keypress to the computer. If you set this value to e.g. 5 and somone puts a 10 dollar bill into the machine, then the computer will still only receive one keypress. If someone inserts 10 one-dollar bills then the keypress will be sent twice (once after each five bills).
 
-Change the value KEY_F12 in the line "Keyboard.write(KEY_F12);" to the value of they key you want the arduino to send when enough money has been received.
+Change the value KEY_F6 in the line "Keyboard.write(KEY_F6);" to the value of they key you want the arduino to send when enough money has been received. For normal keys you can simply put e.g: 
+
+```
+Keyboard.write('A');
+```
+
+To send the A key. To send a special key, do something like:
+
+```
+Keyboard.write(KEY_F12);
+```
+
+You can find the values for special keys and modifiers [here](http://arduino.cc/en/Reference/KeyboardModifiers).
 
 Now program your arduino by hitting the upload button.
 
