@@ -8,7 +8,7 @@
 
 */
 
-#define INPUTPIN (10)
+#define INPUTPIN (15)
 
 int min_pulse_width; // the minimum pulse width to acccept
 int max_pulse_width; // the maximum pulse width to accept
